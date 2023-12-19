@@ -1,19 +1,21 @@
 {% extends 'base.html' %} {% block content %}
-<div class="container">
-  <div class="nav relative -top-7 mt-4 z-10 ">
-    <div class="flex justify-center items-center text-xs gap-4 pt-4">
-      <a href=""> <i class="bi bi-facebook"></i></a>
-      <a href=""> <i class="bi bi-twitter-x"></i></a>
-      <a href=""> <i class="bi bi-linkedin"></i></a>
-      <a href=""> <i class="bi bi-instagram"></i></a>
-    </div>
+<div class="container ">
+  <div class="flex justify-center items-center text-xs gap-4 pt-4 relative z-10">
+    <a href=""> <i class="bi bi-facebook"></i></a>
+    <a href=""> <i class="bi bi-twitter-x"></i></a>
+    <a href=""> <i class="bi bi-linkedin"></i></a>
+    <a href=""> <i class="bi bi-instagram"></i></a>
+  </div>
+  <div class="nav relative -top-7  z-10 ">
+    
+   
     <div class="flex justify-end mx-10 md:mx-28">
       <button class="bg-green-500 text-white text-sm p-3 hover:bg-blue-700">
         Make An Appointemnt
       </button>
     </div>
     <div
-      class="flex justify-between items-center ml-10 md:mx-20 shadow-2xl p-5 uppercase font-extralight bg-white"
+      class="flex justify-between items-center ml-10 md:mx-20 shadow-2xl p-5 uppercase font-extralight bg-white "
     >
       <a href=""
         ><img
@@ -78,30 +80,37 @@
   </div>
 
   {% block content2 %}
-  <div class="flex   items-center justify-start static md:absolute ">
-    <div class="content flex flex-col pl-10  ">
-      <h1>Dummy</h1>
-      <p class="w-50 overflow-hidden ">
-        Lorem ipsum dolor, sit amet consectetur adipisicing elit. Excepturi ut
-        repellat atque numquam, necessitatibus fuga, saepe nam error minus culpa
-        ipsam veritatis unde a omnis enim vero quisquam possimus? Expedita.
+  <div class=" static md:absolute   ">
+    <div class="flex flex-col  md:flex-row items-center justify-start">
+    <div class="content pl-10 md:pl-10 md:w-[90rem] md:block flex flex-col justify-center items-center">
+      <h1 id="carouselTitle" class="text-gray-800 text-4xl md:text-6xl"></h1>
+      <p id="carouselText" class="w-50 overflow-hidden font-sans text-lg indent-8 py-3">
+       
       </p>
-      <button>hellp</button>
+      <button class="bg-blue-800 text-white p-2 rounded-2xl w-25 hover:bg-green-600 mt-5 mb-5">Learn More</button>
     </div>
-    <div class="  md:-mt-60 w-full   h-full">
+    <div class="md:-mt-[13rem] w-full h-full ml-20   ">
       <img
-        class="mySlides"
+        class="mySlides object-contain"
         src="https://www.demo.ooly.in/gmrl/wp-content/uploads/2023/11/banner-01.jpg"
-        style="width: 100%;"
+        style="width: 100%;" 
       />
       <img
-        class="mySlides "
+        class="mySlides object-contain"
         src="https://www.demo.ooly.in/gmrl/wp-content/uploads/2023/11/banner-02.jpg"
         style="width: 100%"
       />
     </div>
+    </div>
+    <div class="mx-20 flex flex-col md:flex-row justify-center items-center relative bottom-6">
+      <div class="bg-green-400 flex justify-center items-center font-bold p-5  w-[32.5rem]"><i class="bi bi-megaphone mr-3"></i> News & Events</div>
+      <div class="bg-green-400 flex justify-center items-center font-bold p-5  md:w-[55rem]"><marquee width="" direction="left" height="">
+        Stay Updated with GMRL: Exciting News and Events Await! Explore the latest in health breakthroughs, special promotions, and community engagements right here. Check back often for updates that keep you informed and inspired.
+        </marquee></div>
+    </div>
   </div>
-
+  
+  
   {% endblock content2 %}
 </div>
 {% endblock content %}
