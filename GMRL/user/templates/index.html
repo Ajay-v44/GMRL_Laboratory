@@ -494,15 +494,17 @@
       </div>
     </div>
 
-    {% comment %} section3 end {% endcomment %}
-     {% comment %} section4 {%endcomment %}
+    {% comment %} section3 end {% endcomment %} 
+    {% comment %}section4{%endcomment %}
     <div class="relative top-20">
-      <div class="flex justify-between items-center mx-20 mt-20">
+      <div
+        class="flex flex-col md:flex-row justify-between items-center mx-20 mt-20"
+      >
         <div class="content">
-          <h1 id="carouselTitle " class="text-5xl font-light">
+          <h1 id="carouselTitle" class="text-5xl font-light">
             GMRL Laboratories:
           </h1>
-          <h1 id="carouselTitle" class="text-4xl font-light">
+          <h1 id="carouselTitle" class="text-4xl font-light pt-3 md:pt-0">
             Unveiling Our Range of Health Packages
           </h1>
         </div>
@@ -514,133 +516,433 @@
           </button>
         </div>
       </div>
-      <div class="slider mt-3">
+      <div class="slider mt-3 mx-20">
         <div
           id="default-carousel"
           class="relative w-full"
           data-carousel="slide"
         >
           <!-- Carousel wrapper -->
-          <div class="relative h-56 overflow-hidden rounded-lg md:h-96">
+          <div
+            class="relative h-[30rem] overflow-hidden rounded-lg md:h-[40rem]"
+          >
             <!-- Item 1 -->
             <div
               class="duration-700 ease-in-out flex items-center justify-between gap-3"
               data-carousel-item
             >
-              {% comment %} card {% endcomment %}
-              <div
-                class="card flex flex-col justify-center items-center shadow-lg rounded-md p-4 bg-white w-min-30 h-30 md:w-72 md:h-64 gap-4 hover:border-2 hover:border-blue-600 cursor-pointer"
-              >
-                <img
-                  src="https://www.demo.ooly.in/gmrl/wp-content/uploads/2023/11/department-icon.png"
-                  class=""
-                  alt="..."
-                />
-                <span class="text-gray-600 capitalize">Pathology</span>
+              <!-- Card 1 -->
+              <div class="card w-96">
+                <a href="">
+                  <div class="img">
+                    <div class="relative overflow-hidden bg-cover bg-no-repeat">
+                      <img
+                        src="https://www.demo.ooly.in/gmrl/wp-content/uploads/2023/11/executive-package.jpg"
+                        class="zoom-on-hover transition-transform duration-500 ease-in-out transform hover:scale-110 h-[288px]"
+                        alt="Executive Package"
+                      />
+                      <div
+                        class="absolute bottom-0 left-0 right-0 top-0 h-full w-full overflow-hidden bg-blue-800 bg-fixed opacity-0 transition duration-300 ease-in-out hover:opacity-70 flex justify-center items-center"
+                      >
+                        <b class="mx-10 text-2xl">
+                          <i class="fa-solid fa-link"></i
+                        ></b>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="content">
+                    <div class="text-white bg-gray-600 p-3 text-center">
+                      From: ₹2499
+                    </div>
+                    <div
+                      class="flex justify-between items-center bg-gray-400 hover:bg-green-600 p-3"
+                    >
+                      <h5 class="font-medium">Executive Packages</h5>
+                      <h5 class="text-sm font-semibold">
+                        <i class="fa-solid fa-greater-than"></i>
+                      </h5>
+                    </div>
+                  </div>
+                </a>
               </div>
-              {% comment %} end card {% endcomment %} {% comment %} card
-              {%endcomment %}
-              <div
-                class="card flex flex-col justify-center items-center shadow-lg rounded-md p-4 bg-white w-40 h-50 md:w-72 md:h-64 gap-4 hover:border-2 hover:border-blue-600 cursor-pointer"
-              >
-                <img
-                  src="https://www.demo.ooly.in/gmrl/wp-content/uploads/2023/11/bio-chemistry.png"
-                  class=""
-                  alt="..."
-                />
-                <span class="text-gray-600 capitalize">biochemistry</span>
+              <!-- End Card 1 -->
+              <!-- Card 1 -->
+              <div class="card w-96">
+                <a href="">
+                  <div class="img">
+                    <div
+                      class="relative max-w-xl overflow-hidden bg-cover bg-no-repeat"
+                    >
+                      <img
+                        src="https://www.demo.ooly.in/gmrl/wp-content/uploads/2023/11/package2.jpg "
+                        class="zoom-on-hover transition-transform duration-500 ease-in-out transform hover:scale-110 h-[288px]"
+                        alt="Executive Package"
+                      />
+                      <div
+                        class="absolute bottom-0 left-0 right-0 top-0 h-full w-full overflow-hidden bg-blue-800 bg-fixed opacity-0 transition duration-300 ease-in-out hover:opacity-70 flex justify-center items-center"
+                      >
+                        <b class="mx-10 text-2xl">
+                          <i class="fa-solid fa-link"></i
+                        ></b>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="content">
+                    <div class="text-white bg-gray-600 p-3 text-center">
+                      From: ₹699
+                    </div>
+                    <div
+                      class="flex justify-between items-center bg-gray-400 hover:bg-green-600 p-3"
+                    >
+                      <h5 class="font-medium">Ayush General</h5>
+                      <h5 class="text-sm font-semibold">
+                        <i class="fa-solid fa-greater-than"></i>
+                      </h5>
+                    </div>
+                  </div>
+                </a>
               </div>
-              {% comment %} end card {% endcomment %} {% comment %} card
-              {%endcomment %}
-              <div
-                class="card flex flex-col justify-center items-center shadow-lg rounded-md p-4 bg-white w-40 h-50 md:w-72 md:h-64 gap-4 hover:border-2 hover:border-blue-600 cursor-pointer"
-              >
-                <img
-                  src="https://www.demo.ooly.in/gmrl/wp-content/uploads/2023/11/microbiology.png"
-                  class=""
-                  alt="..."
-                />
-                <span class="text-gray-600 capitalize">microBiolagy</span>
+              <!-- End Card 1 -->
+              <!-- Card 1 -->
+              <div class="card w-96">
+                <a href="">
+                  <div class="img">
+                    <div
+                      class="relative max-w-xl overflow-hidden bg-cover bg-no-repeat"
+                    >
+                      <img
+                        src="https://www.demo.ooly.in/gmrl/wp-content/uploads/2023/11/package3.jpg"
+                        class="zoom-on-hover transition-transform duration-500 ease-in-out transform hover:scale-110 h-[288px]"
+                        alt="Executive Package"
+                      />
+                      <div
+                        class="absolute bottom-0 left-0 right-0 top-0 h-full w-full overflow-hidden bg-blue-800 bg-fixed opacity-0 transition duration-300 ease-in-out hover:opacity-70 flex justify-center items-center"
+                      >
+                        <b class="mx-10 text-2xl">
+                          <i class="fa-solid fa-link"></i
+                        ></b>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="content">
+                    <div class="text-white bg-gray-600 p-3 text-center">
+                      From: ₹999
+                    </div>
+                    <div
+                      class="flex justify-between items-center bg-gray-400 hover:bg-green-600 p-3"
+                    >
+                      <h5 class="font-medium">Ayush Silver Plan</h5>
+                      <h5 class="text-sm font-semibold">
+                        <i class="fa-solid fa-greater-than"></i>
+                      </h5>
+                    </div>
+                  </div>
+                </a>
               </div>
-              {% comment %} end card {% endcomment %} {% comment %} card
-              {%endcomment %}
-              <div
-                class="card flex flex-col justify-center items-center shadow-lg rounded-md p-4 bg-white w-40 h-50 md:w-72 md:h-64 gap-4 hover:border-2 hover:border-blue-600 cursor-pointer"
-              >
-                <img
-                  src="https://www.demo.ooly.in/gmrl/wp-content/uploads/2023/11/Serology.png"
-                  class=""
-                  alt="..."
-                />
-                <span class="text-gray-600 capitalize">Serology</span>
-              </div>
-              {% comment %} end card {% endcomment %}
+              <!-- End Card 1 -->
             </div>
+            <!-- End Item 1 -->
+
             <!-- Item 2 -->
             <div
               class="duration-700 ease-in-out flex gap-4 justify-center items-center"
               data-carousel-item
             >
-              {% comment %} card {%endcomment %}
-              <div
-                class="card flex flex-col justify-center items-center shadow-lg rounded-md p-4 bg-white w-40 h-50 md:w-72 md:h-64 gap-4 hover:border-2 hover:border-blue-600 cursor-pointer"
-              >
-                <img
-                  src="https://www.demo.ooly.in/gmrl/wp-content/uploads/2023/11/Immunology.png"
-                  class=""
-                  alt="..."
-                />
-                <span class="text-gray-600 capitalize">Immunology</span>
+              <!-- Card 1 -->
+              <div class="card w-96">
+                <a href="">
+                  <div class="img">
+                    <div
+                      class="relative max-w-xl overflow-hidden bg-cover bg-no-repeat"
+                    >
+                      <img
+                        src="https://www.demo.ooly.in/gmrl/wp-content/uploads/2023/11/package4.jpg"
+                        class="zoom-on-hover transition-transform duration-500 ease-in-out transform hover:scale-110 h-[288px]"
+                        alt="Executive Package"
+                      />
+                      <div
+                        class="absolute bottom-0 left-0 right-0 top-0 h-full w-full overflow-hidden bg-blue-800 bg-fixed opacity-0 transition duration-300 ease-in-out hover:opacity-70 flex justify-center items-center"
+                      >
+                        <b class="mx-10 text-2xl">
+                          <i class="fa-solid fa-link"></i
+                        ></b>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="content">
+                    <div class="text-white bg-gray-600 p-3 text-center">
+                      From: ₹999
+                    </div>
+                    <div
+                      class="flex justify-between items-center bg-gray-400 hover:bg-green-600 p-3"
+                    >
+                      <h5 class="font-medium">Ayush Diabetic & Kidney Care</h5>
+                      <h5 class="text-sm font-semibold">
+                        <i class="fa-solid fa-greater-than"></i>
+                      </h5>
+                    </div>
+                  </div>
+                </a>
               </div>
-              {% comment %} end card {% endcomment %}
-              <div
-                class="card flex flex-col justify-center items-center shadow-lg rounded-md p-4 bg-white w-40 h-50 md:w-72 md:h-64 gap-4 hover:border-2 hover:border-blue-600 cursor-pointer"
-              >
-                <img
-                  src="https://www.demo.ooly.in/gmrl/wp-content/uploads/2023/11/radiology.png"
-                  class=""
-                  alt="..."
-                />
-                <span class="text-gray-600 capitalize">radiology</span>
+              <!-- End Card 1 -->
+              <!-- Card 1 -->
+              <div class="card w-96">
+                <a href="">
+                  <div class="img">
+                    <div
+                      class="relative max-w-xl overflow-hidden bg-cover bg-no-repeat"
+                    >
+                      <img
+                        src="https://www.demo.ooly.in/gmrl/wp-content/uploads/2023/11/package5.jpg"
+                        class="zoom-on-hover transition-transform duration-500 ease-in-out transform hover:scale-110 h-[288px]"
+                        alt="Executive Package"
+                      />
+                      <div
+                        class="absolute bottom-0 left-0 right-0 top-0 h-full w-full overflow-hidden bg-blue-800 bg-fixed opacity-0 transition duration-300 ease-in-out hover:opacity-70 flex justify-center items-center"
+                      >
+                        <b class="mx-10 text-2xl">
+                          <i class="fa-solid fa-link"></i
+                        ></b>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="content">
+                    <div class="text-white bg-gray-600 p-3 text-center">
+                      From: ₹1700
+                    </div>
+                    <div
+                      class="flex justify-between items-center bg-gray-400 hover:bg-green-600 p-3"
+                    >
+                      <h5 class="font-medium">Ayush Gold</h5>
+                      <h5 class="text-sm font-semibold">
+                        <i class="fa-solid fa-greater-than"></i>
+                      </h5>
+                    </div>
+                  </div>
+                </a>
               </div>
-              <div
-                class="card flex flex-col justify-center items-center shadow-lg rounded-md p-4 bg-white w-40 h-50 md:w-72 md:h-64 gap-4 hover:border-2 hover:border-blue-600 cursor-pointer"
-              >
-                <img
-                  src="https://www.demo.ooly.in/gmrl/wp-content/uploads/2023/11/molecular-biology.png"
-                  class=""
-                  alt="..."
-                />
-                <span class="text-gray-600 capitalize">molecularBiology</span>
-              </div>
+              <!-- End Card 1 -->
+            </div>
+            <!-- End Item 2 -->
+
+            <!-- Slider indicators -->
+            <div
+              class="absolute z-30 flex -translate-x-1/2 bottom-5 left-1/2 space-x-3 rtl:space-x-reverse"
+            >
+              <button
+                type="button"
+                class="w-3 h-3 rounded-full border border-blue-600 hover:bg-blue-600"
+                aria-current="true"
+                aria-label="Slide 1"
+                data-carousel-slide-to="0"
+              ></button>
+              <button
+                type="button"
+                class="w-3 h-3 rounded-full border border-blue-600 hover:bg-blue-600"
+                aria-current="false"
+                aria-label="Slide 2"
+                data-carousel-slide-to="1"
+              ></button>
             </div>
           </div>
-          <!-- Slider indicators -->
-          <div
-            class="absolute z-30 flex -translate-x-1/2 bottom-5 left-1/2 space-x-3 rtl:space-x-reverse"
-          >
-            <button
-              type="button"
-              class="w-3 h-3 rounded-full border border-blue-600 hover:bg-blue-600"
-              aria-current="true"
-              aria-label="Slide 1"
-              data-carousel-slide-to="0"
-            ></button>
-            <button
-              type="button"
-              class="w-3 h-3 rounded-full border border-blue-600 hover:bg-blue-600"
-              aria-current="false"
-              aria-label="Slide 2"
-              data-carousel-slide-to="1"
-            ></button>
+        </div>
+      </div>
+      <!--Section 4 ends-->
+      <!--Section 5-->
+      <div class="relative top-20">
+        <div class="container bg-blue-50">
+          <div class="mx-10 md:mx-36 pt-5">
+            <div class="main-con flex items-center justify-center">
+              <h1
+                class="text-center font-normal text-5xl w-auto md:w-[40rem]"
+                id="carouselTitle"
+              >
+                Our Testimonials
+              </h1>
+            </div>
+
+            {% comment %} slider {% endcomment %}
+
+            <div
+              id="default-carousel"
+              class="relative w-full"
+              data-carousel="slide"
+            >
+              <!-- Carousel wrapper -->
+              <div class="relative h-80 overflow-hidden rounded-lg md:h-96">
+                <!-- Item 1 -->
+                <div
+                  class="duration-700 ease-in-out flex items-center justify-between gap-3"
+                  data-carousel-item
+                >
+                  {% comment %} card {% endcomment %}
+                  <div
+                    class="card flex flex-col justify-center items-center shadow-lg rounded-md p-6 bg-white w-30 h-30 md:w-96 md:h-80 gap-4 hover:border-2 hover:border-blue-600 cursor-pointer"
+                  >
+                    <p class="text-justify">
+                      Excellent place to go for clinical reports, all kind of
+                      tests are available there. Very professional staff's and
+                      good environment.
+                    </p>
+                    <div class="border border-t-2 border-gray-500 w-60"></div>
+                    <div class="cont flex gap-2">
+                      <div
+                        class="profile bg-gray-200 rounded-full p-2 text-white"
+                      >
+                        <i class="fa-regular fa-user text-4xl"></i>
+                      </div>
+                      <div class="flex flex-col">
+                        <h2 class="text-lg">Josey</h2>
+                        <small>Thripunithura</small>
+                      </div>
+                    </div>
+                  </div>
+                  {% comment %} end card {% endcomment %}
+                   {% comment %} card {% endcomment %}
+                  <div
+                    class="card flex flex-col justify-center items-center shadow-lg rounded-md p-6 bg-white w-30 h-30 md:w-96 md:h-80 gap-4 hover:border-2 hover:border-blue-600 cursor-pointer"
+                  >
+                    <p class="text-justify">
+                      Very friendly, prompt and quick service . No complicated
+                      procedures involved. Would definitely recommend.
+                    </p>
+                    <div class="border border-t-2 border-gray-500 w-60"></div>
+                    <div class="cont flex gap-2">
+                      <div
+                        class="profile bg-gray-200 rounded-full p-2 text-white"
+                      >
+                        <i class="fa-regular fa-user text-4xl"></i>
+                      </div>
+                      <div class="flex flex-col">
+                        <h2 class="text-lg">Shaza</h2>
+                        <small>Chambakar</small>
+                      </div>
+                    </div>
+                  </div>
+                  {% comment %} end card {% endcomment %} 
+                  {% comment %} card {%endcomment %}
+                  <div
+                    class="card flex flex-col justify-center items-center shadow-lg rounded-md p-6 bg-white w-30 h-30 md:w-96 md:h-80 gap-4 hover:border-2 hover:border-blue-600 cursor-pointer"
+                  >
+                    <p class="text-justify">
+                      Your home collection facility was very nice and helpful
+                      for us. Those who came to collect the samples were
+                      professionally skillful, Thank u
+                    </p>
+                    <div class="border border-t-2 border-gray-500 w-60"></div>
+                    <div class="cont flex gap-2">
+                      <div
+                        class="profile bg-gray-200 rounded-full p-2 text-white"
+                      >
+                        <i class="fa-regular fa-user text-4xl"></i>
+                      </div>
+                      <div class="flex flex-col">
+                        <h2 class="text-lg">Eldhose</h2>
+                        <small>Chambakara</small>
+                      </div>
+                    </div>
+                  </div>
+                  {% comment %} end card {% endcomment %}
+                </div>
+                <!-- Item 2 -->
+                <div
+                  class="duration-700 ease-in-out flex gap-4 justify-center items-center"
+                  data-carousel-item
+                >
+                  {% comment %} card {% endcomment %}
+                  <div
+                    class="card flex flex-col justify-center items-center shadow-lg rounded-md p-6 bg-white w-30 h-30 md:w-96 md:h-80 gap-4 hover:border-2 hover:border-blue-600 cursor-pointer"
+                  >
+                    <p class="text-justify overflow-hidden">
+                      We had used GMRL's services twice. Both the times the
+                      experience was wonderful. Right from the time of booking,
+                      their follow up, coordination, home collection, payment
+                      process, result sharing is all seamless. I am very happy
+                      to see such polite, and professional staff. Great job
+                      team! Wish you continued success
+                    </p>
+                    <div class="border border-t-2 border-gray-500 w-60"></div>
+                    <div class="cont flex gap-2">
+                      <div
+                        class="profile bg-gray-200 rounded-full p-2 text-white"
+                      >
+                        <i class="fa-regular fa-user text-4xl"></i>
+                      </div>
+                      <div class="flex flex-col">
+                        <h2 class="text-lg">Krishnakumar</h2>
+                        <small>Chambakara</small>
+                      </div>
+                    </div>
+                  </div>
+                  {% comment %} end card {% endcomment %} 
+                  {% comment %} card {%endcomment %}
+                  <div
+                    class="card flex flex-col justify-center items-center shadow-lg rounded-md p-6 bg-white w-30 h-30 md:w-96 md:h-80 gap-4 hover:border-2 hover:border-blue-600 cursor-pointer"
+                  >
+                    <p class="text-justify">
+                      Good service from here. Gets report at same day, very fast
+                      service.
+                    </p>
+                    <div class="border border-t-2 border-gray-500 w-60"></div>
+                    <div class="cont flex gap-2">
+                      <div
+                        class="profile bg-gray-200 rounded-full p-2 text-white"
+                      >
+                        <i class="fa-regular fa-user text-4xl"></i>
+                      </div>
+                      <div class="flex flex-col">
+                        <h2 class="text-lg">Abhinandh</h2>
+                        <small>Thripunithura</small>
+                      </div>
+                    </div>
+                  </div>
+                  {% comment %} end card {% endcomment %}
+                </div>
+                <!-- Slider indicators -->
+                <div
+                  class="absolute z-30 flex -translate-x-1/2 bottom-5 left-1/2 space-x-3 rtl:space-x-reverse"
+                >
+                  <button
+                    type="button"
+                    class="w-3 h-3 rounded-full border border-blue-600 hover:bg-blue-600"
+                    aria-current="true"
+                    aria-label="Slide 1"
+                    data-carousel-slide-to="0"
+                  ></button>
+                  <button
+                    type="button"
+                    class="w-3 h-3 rounded-full border border-blue-600 hover:bg-blue-600"
+                    aria-current="false"
+                    aria-label="Slide 2"
+                    data-carousel-slide-to="1"
+                  ></button>
+                </div>
+              </div>
+
+              {% comment %} slider end {%endcomment %}
+            </div>
           </div>
         </div>
-
-        {% comment %} slider end {%endcomment %}
       </div>
+      <!--Section 5 ends-->
+         <!--Section 6-->
+         <div class="relative top-32">
+          <div class="flex flex-col mx-10 md:mx-32">
+           <div class="flex flex-col justify-between gap-5">
+            <div class="content">
+              <h1 id="carouselTitle" class="text-5xl font-light">Embrace Excellence:</h1>
+              <h1 id="carouselTitle" class="text-5xl font-light"> Why GMRL Laboratories Stands Out</h1>
+             </div>
+             <p class="text-sm">At GMRL Laboratories, we stand out as a beacon of excellence, offering top-notch diagnostic services and a commitment to your well-being.</p>
+             <ul>
+              <li>Cutting-edge, precision diagnostic technology</li>
+             </ul>
+           </div>
+          </div>
+         </div>
+        {% endblock content2 %}
+      
+      {% endblock content %}
     </div>
   </div>
-
-  {% endblock content2 %}
 </div>
-{% endblock content %}
