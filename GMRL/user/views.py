@@ -34,3 +34,5 @@ def branches(request):
 
 def contact_us(request):
     return render(request, 'contactus.html')
+def book_appontment(request):
+    return render(request,'bookappointment.html')

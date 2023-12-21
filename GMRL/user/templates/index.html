@@ -11,9 +11,9 @@
   </div>
   <div class="nav relative -top-7 z-10">
     <div class="flex justify-end mx-10 md:mx-28">
-      <button class="bg-green-500 text-white text-sm p-3 hover:bg-blue-700">
+      <a class="bg-green-500 text-white text-sm p-3 hover:bg-blue-700" href="{% url "bookappointemnt" %}" >
         Make An Appointemnt
-      </button>
+      </a>
     </div>
     <div
       class="flex justify-between items-center ml-10 md:mx-20 shadow-2xl p-5 uppercase font-extralight bg-white"
@@ -91,11 +91,11 @@
           id="carouselText"
           class="w-50 overflow-hidden font-sans text-lg indent-8 py-3"
         ></p>
-        <button
-          class="bg-blue-800 text-white p-2 rounded-2xl w-25 hover:bg-green-600 mt-5 mb-5"
+        <a
+          class="bg-blue-800 text-white p-2 rounded-2xl w-25 hover:bg-green-600 mt-5 mb-5" href="{% url "contactus" %}"
         >
           Learn More
-        </button>
+    </a>
       </div>
       <div class="md:-mt-[13rem] w-auto h-auto md:w-full md:h-full md:ml-20">
         <img
@@ -163,11 +163,11 @@
           well-being is our priority, and we’re honored to be your trusted
           partner on your journey to a healthier, happier life.
         </p>
-        <button
-          class="bg-blue-800 text-white p-2 rounded-2xl w-25 hover:bg-green-600 mt-5 mb-5"
+        <a
+          class="bg-blue-800 text-white p-2 rounded-2xl w-25 hover:bg-green-600 mt-5 mb-5" href="{% url "aboutus" %}"
         >
           Learn More
-        </button>
+      </a>
       </div>
     </div>
     <div class="pt-5 grid grid-cols-2 md:grid-cols-5 mx-10 pb-3 md:mx-36">
@@ -1065,7 +1065,7 @@
                 </h4>
               </div>
               <a
-                type="submit"
+              href="{% url "bookappointemnt" %}"
                 class="bg-black text-green-500 p-3 rounded-3xl hover:bg-blue-600 hover:text-white w-40 text-center cursor-pointer"
               >
                 Book Now

@@ -1,0 +1,126 @@
+{% extends 'index.html' %} {% block content2 %}
+<div class="flex flex-col md:flex-row items-center justify-start bg-blue-50">
+  <div
+    class="content pl-10 md:pl-10 md:w-[90rem] md:block flex flex-col justify-center items-center mx-10 mt-10"
+  >
+    <h1 class="text-gray-800 text-4xl md:text-6xl carouselTitle">
+      Make An Appointment
+    </h1>
+    <p id="" class="w-50 overflow-hidden font-sans text-lg indent-4 pt-5">
+      Schedule your appointment today for personalized care and comprehensive
+      health assessments.
+    </p>
+  </div>
+  <div class="md:-mt-[13rem] w-auto h-auto md:w-full md:h-full md:ml-20">
+    <img
+      class="mySlides object-contain"
+      src="https://www.demo.ooly.in/gmrl/wp-content/uploads/2023/11/banner2.jpg"
+      style="width: 100%"
+    />
+  </div>
+</div>
+<!--Hero2  starts-->
+<div class="flex justify-center items-center mt-20">
+  <div class="form">
+    <h1 class="text-3xl text-gray-600 text-center md:text-start">
+      Send us a message
+    </h1>
+    <p class="text-sm text-gray-500 pt-3 text-center md:text-start">
+      Connect with us and share your thoughts – your message matters to us.
+    </p>
+    <form
+      action=""
+      method="post"
+      class="flex flex-col gap-5 md:gap-10 mt-5 justify-center md:justify-center items-center md:items-center"
+    >
+      {% csrf_token %}
+      <input
+        type="text"
+        name="name"
+        placeholder="Your Name"
+        required=""
+        class="w-80 md:w-full border-2 border-gray-200 rounded-sm focus:border-blue-200"
+      />
+      <div class="flex gap-5 flex-col md:flex-row">
+        <input
+          type="email"
+          name="email"
+          placeholder="Email"
+          required=""
+          class="w-80 md:w-96 border-2 border-gray-200 rounded-sm focus:border-blue-200"
+        />
+        <input
+          type="number"
+          name="phone"
+          placeholder="Phone"
+          required=""
+          class="w-80 md:w-96 border-2 border-gray-200 rounded-sm focus:border-blue-200"
+          minlength="10"
+          maxlength="10"
+        />
+      </div>
+      <div class="flex gap-5 flex-col md:flex-row">
+        <input
+          type="time"
+          name="time"
+          placeholder="time"
+          required=""
+          class="w-80 md:w-96 border-2 border-gray-200 rounded-sm focus:border-blue-200"
+        />
+        <input
+          type="date"
+          name="date"
+          placeholder="Date"
+          required=""
+          class="w-80 md:w-96 border-2 border-gray-200 rounded-sm focus:border-blue-200"
+        />
+      </div>
+      <div class="flex gap-5 flex-col md:flex-row">
+        <input
+          type="number"
+          name="age"
+          placeholder="Age"
+          required=""
+          class="w-80 md:w-96 border-2 border-gray-200 rounded-sm focus:border-blue-200"
+        />
+        <select
+          name="gender"
+          required=""
+          class="w-80 md:w-96 border-2 border-gray-200 rounded-sm focus:border-blue-200"
+        >
+          <option value="">-Please Choose An Option-</option>
+          <option value="male">Male</option>
+          <option value="female">Female</option>
+        </select>
+      </div>
+      <textarea
+        name="address"
+        id=""
+        cols="65"
+        rows="5"
+        class="border-2 border-gray-200 rounded-sm focus:border-blue-200 w-80 md:w-full"
+        required
+        name="message"
+        placeholder="Adress"
+      ></textarea>
+
+      <textarea
+        name="message"
+        id=""
+        cols="65"
+        rows="5"
+        class="border-2 border-gray-200 rounded-sm focus:border-blue-200 w-80 md:w-full"
+        required
+        name="message"
+        placeholder="Message"
+      ></textarea>
+      <button
+        type="submit"
+        class="bg-blue-800 text-white p-2 rounded-lg w-64 hover:bg-green-600 mt-1 mb-5"
+      >
+        Submit
+      </button>
+    </form>
+  </div>
+</div>
+{% endblock content2 %}
