@@ -1,0 +1,114 @@
+{% extends 'index.html' %} {% block content2 %}
+<div class="flex flex-col md:flex-row items-center justify-start bg-blue-50">
+  <div
+    class="content pl-10 md:pl-10 md:w-[90rem] md:block flex flex-col justify-center items-center mx-10 mt-10"
+  >
+    <h1 class="text-gray-800 text-4xl md:text-6xl carouselTitle">Contact Us</h1>
+    <p id="" class="w-50 overflow-hidden font-sans text-lg indent-5 pt-5">
+      Connect with GMRL Labs for personalized health solutions – your well-being
+      is just a call away.
+    </p>
+  </div>
+  <div class="md:-mt-[13rem] w-auto h-auto md:w-full md:h-full md:ml-20">
+    <img
+      class="mySlides object-contain"
+      src="https://www.demo.ooly.in/gmrl/wp-content/uploads/2023/11/banner2.jpg"
+      style="width: 100%"
+    />
+  </div>
+</div>
+<!--Hero2  starts-->
+<div class="mx-10 md:mx-20 flex flex-col md:flex-row p-5 gap-5 mt-10">
+  <div
+    class="card border-2 border-gray-300 border-b-blue-500 hover:border-b-green-500 p-5 flex flex-col justify-center items-center w-auto h-auto md:w-80 md:h-60"
+  >
+    <div
+      class="bg-blue-500 text-white rounded-full hover:bg-green-500 delay-150 w-20 h-20 flex justify-center items-center"
+    >
+      <i class="fa-solid fa-phone text-3xl"></i>
+    </div>
+    <h3 class="text-gray-900 text-lg font-medium">Phone</h3>
+    <a href="" class="text-gray-500">+91 81388 62626</a>
+    <a href="" class="text-gray-500">0484 0000 0000</a>
+  </div>
+  <div
+    class="card border-2 border-gray-300 border-b-blue-500 hover:border-b-green-500 p-5 flex flex-col justify-center items-center w-auto h-auto md:w-80 md:h-60"
+  >
+    <div
+      class="bg-blue-500 text-white rounded-full hover:bg-green-500 delay-150 w-20 h-20 flex justify-center items-center"
+    >
+      <i class="fa-solid fa-envelope text-3xl"></i>
+    </div>
+    <h3 class="text-gray-900 text-lg font-medium">Email</h3>
+    <a href="" class="text-gray-500">info@gmrllabs.com</a>
+  </div>
+  <div
+    class="card border-2 border-gray-300 border-b-blue-500 hover:border-b-green-500 p-5 flex flex-col justify-center items-center w-auto h-auto md:w-80 md:h-60"
+  >
+    <div
+      class="bg-blue-500 text-white rounded-full hover:bg-green-500 delay-150 w-20 h-20 flex justify-center items-center"
+    >
+      <i class="fa-solid fa-location-dot text-3xl"></i>
+    </div>
+    <h3 class="text-gray-900 text-lg font-medium">Address</h3>
+    <a href="" class="text-gray-500"
+      >GMRL Laboratories Chambakkara, Ernakulam, Ernakulam - 682011</a
+    >
+  </div>
+  <div
+    class="card border-2 border-gray-300 border-b-blue-500 hover:border-b-green-500 p-5 flex flex-col justify-center items-center w-auto h-auto md:w-80 md:h-60"
+  >
+    <div
+      class="bg-blue-500 text-white rounded-full hover:bg-green-500 delay-150 w-20 h-20 flex justify-center items-center"
+    >
+      <i class="fa-regular fa-clock text-3xl"></i>
+    </div>
+    <h3 class="text-gray-900 text-lg font-medium">Opening Hours</h3>
+    <a href="" class="text-gray-500">Mon - Sat : 6:30pm to 6:00pm</a>
+    <a href="" class="text-gray-500">Sun : 6:30am - 12:30pm</a>
+  </div>
+</div>
+
+<!--Hero2 Ends-->
+
+<!--Contact form-->
+<div
+  class="bg-blue-50 px-10 flex flex-col md:flex-row justify-center items-center gap-10 md:gap-32 p-20"
+>
+  <img
+    src="https://www.demo.ooly.in/gmrl/wp-content/uploads/2023/11/package4.jpg"
+    alt=""
+    class="w-auto h-auto rounded-md"
+  />
+  <div class="form">
+    <h1 class="text-3xl text-gray-600 text-center md:text-start ">Send us a message</h1>
+    <p class="text-sm text-gray-500 pt-3  text-center md:text-start">Connect with us and share your thoughts – your message matters to us.</p>
+    <form action="" method="post" class=" flex flex-col gap-5 md:gap-10 mt-5 justify-center md:justify-start items-center md:items-start " >{% csrf_token %}
+
+       <div class="flex gap-5 flex-col md:flex-row">
+        <input type="text" name="name" placeholder="Your Name" required="" class="w-80  border-2 border-gray-200 rounded-sm focus:border-blue-200" >
+        <input type="email" name="email" placeholder="Email" required="" class="w-80 border-2 border-gray-200 rounded-sm focus:border-blue-200" >
+       </div>
+       <div class="flex gap-5  flex-col md:flex-row">
+        <input type="number" name="phone" placeholder="Phone" required="" class="w-80 border-2 border-gray-200 rounded-sm focus:border-blue-200" minlength="10" maxlength="10" >
+        <input type="text" name="subject" placeholder="Subject" required="" class="w-80 border-2 border-gray-200 rounded-sm focus:border-blue-200" >
+       </div>
+       <textarea name="" id="" cols="65" rows="5" class="border-2 border-gray-200 rounded-sm focus:border-blue-200  w-80 md:w-auto" required name="message" placeholder="Message" ></textarea>
+       <button
+                type="submit"
+                class="bg-blue-800 text-white p-2 rounded-lg w-64 hover:bg-green-600 mt-5 mb-5"
+              >
+                Submit
+              </button>
+      </form>
+
+  </div>
+</div>
+
+<!--MAp-->
+<div class="flex justify-center items-center mt-20">
+    
+
+<iframe src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d7859.553450312518!2d76.323388!3d9.952526!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3b0873f5f90cc883%3A0x6b02b06cd62db722!2sGMRL%20Laboratories%20Chambakkara!5e0!3m2!1sen!2sin!4v1703169890189!5m2!1sen!2sin" width="1200" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade" ></iframe>
+</div>
+{% endblock content2 %}
