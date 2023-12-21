@@ -1,4 +1,5 @@
-{% extends 'base.html' %} {% load static %} {% block content %}
+{% extends 'base.html' %} {% load static %}
+ {% block content %}
 <div class="container">
   <div
     class="flex justify-center items-center text-xs gap-4 pt-4 relative z-10"
@@ -17,7 +18,7 @@
     <div
       class="flex justify-between items-center ml-10 md:mx-20 shadow-2xl p-5 uppercase font-extralight bg-white"
     >
-      <a href=""
+      <a href="{% url "index" %}"
         ><img
           src="https://www.demo.ooly.in/gmrl/wp-content/themes/gmrl/images/gmrl-logo.svg"
           alt=""
@@ -34,7 +35,7 @@
       >
         <a
           class="hover:bg-blue-800 hover:text-white text-slate-600 hover:p-1 hover:rounded-lg"
-          href=""
+          href="{% url "aboutus" %}"
         >
           About us
         </a>
@@ -1040,6 +1041,7 @@
         </div>
       </div>
       <!--Section 6 ends-->
+      {% endblock content2 %}
       <!--Footer starts-->
       <div class="relative top-48 bg-blue-50">
         <!--Brousher-->
@@ -1200,7 +1202,7 @@
           </div>
         </div>
       </div>
-      {% endblock content2 %} {% endblock content %}
+     {% endblock content %}
     </div>
   </div>
 </div>
