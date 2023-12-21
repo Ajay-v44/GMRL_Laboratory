@@ -9,3 +9,5 @@ def testpage(request):
     return render(request,'tests.html')
 def packages(request):
     return render(request,'packages.html')
+def blogs(request):
+    return render(request,'blogs.html')
