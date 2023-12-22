@@ -48,6 +48,7 @@ class BookAppontmentAdmin(admin.ModelAdmin):
     search_fields = ['date', 'name', 'email', 'phone']
     list_filter = ['date']
 
+
 class Enquiry(models.Model):
     name = models.CharField(max_length=60)
     email = models.EmailField(max_length=254)
@@ -69,39 +70,79 @@ class EnquiryAdmin(admin.ModelAdmin):
     search_fields = ['received_on', 'email']
     list_filter = ['received_on']
 
+
 class Packages(models.Model):
-    package_name=models.CharField(max_length=150)
-    image=models.ImageField( upload_to='packages')
-    price=models.BigIntegerField()
-    includeds=models.TextField()
+    package_name = models.CharField(max_length=150)
+    image = models.ImageField(upload_to='packages')
+    price = models.BigIntegerField()
+    includeds = models.TextField()
+
     class Meta:
-        db_table='Packages'
+        db_table = 'Packages'
+
+
 @admin.register(Packages)
 class PackagesAdmin(admin.ModelAdmin):
-    list_display=('package_name','image','price','includeds')
-    search_fields=['package_name','price']
-    list_filter=['package_name']
+    list_display = ('package_name', 'image', 'price', 'includeds')
+    search_fields = ['package_name', 'price']
+    list_filter = ['package_name']
+
 
 class Blogs(models.Model):
-    title=models.CharField(max_length=150)
-    image=models.ImageField( upload_to='blogs')
-    date=models.DateField( auto_now=True)
-    desc=models.TextField()
-    sub1=models.CharField( max_length=150,blank=True)
-    desc1=models.TextField(blank=True)
-    sub2=models.CharField( max_length=150,blank=True)
-    desc2=models.TextField(blank=True)
-    sub3=models.CharField( max_length=150,blank=True)
-    desc3=models.TextField(blank=True)
-    sub4=models.CharField( max_length=150,blank=True)
-    desc4=models.TextField(blank=True)
-    sub5=models.CharField( max_length=150,blank=True)
-    desc5=models.TextField(blank=True)
-    sub6=models.CharField( max_length=150,blank=True)
-    desc6=models.TextField(blank=True)
+    title = models.CharField(max_length=150)
+    image = models.ImageField(upload_to='blogs')
+    date = models.DateField(auto_now=True)
+    desc = models.TextField()
+    sub1 = models.CharField(max_length=150, blank=True)
+    desc1 = models.TextField(blank=True)
+    sub2 = models.CharField(max_length=150, blank=True)
+    desc2 = models.TextField(blank=True)
+    sub3 = models.CharField(max_length=150, blank=True)
+    desc3 = models.TextField(blank=True)
+    sub4 = models.CharField(max_length=150, blank=True)
+    desc4 = models.TextField(blank=True)
+    sub5 = models.CharField(max_length=150, blank=True)
+    desc5 = models.TextField(blank=True)
+    sub6 = models.CharField(max_length=150, blank=True)
+    desc6 = models.TextField(blank=True)
+
     class Meta:
-        db_table='Blogs'
+        db_table = 'Blogs'
+
+
 @admin.register(Blogs)
 class BlogsAdmin(admin.ModelAdmin):
-    list_display=('title','image','date','desc')
-    list_filter=['date']
+    list_display = ('title', 'image', 'date', 'desc')
+    list_filter = ['date']
+
+
+class Gallery(models.Model):
+    img = models.ImageField(upload_to='gallery')
+    added_on = models.DateField(auto_now=True)
+
+    class Meta:
+        db_table = 'Gallery'
+
+
+@admin.register(Gallery)
+class GalleryAdmin(admin.ModelAdmin):
+    list_display = ('img', 'added_on')
+    list_filter = ['img', 'added_on']
+
+
+class Branches(models.Model):
+    branch_name = models.CharField(max_length=150)
+    image = models.ImageField(upload_to='branches')
+    phone = models.BigIntegerField()
+    email = models.EmailField(max_length=254)
+    address = models.TextField()
+    mon_sat = models.CharField(max_length=150)
+    sun = models.CharField(max_length=150)
+    maplink = models.TextField()
+    class Meta:
+        db_table='Branches'
+@admin.register(Branches)
+class BranchesAdmin(admin.ModelAdmin):
+    list_display=('branch_name','image','phone','email','address')
+    list_filter=['branch_name']
+    search_fields=['branch_name','email']

@@ -11,5 +11,6 @@ urlpatterns = [
     path('/contactus', contact_us, name='contactus'),
     path('/bookappointemnt', book_appontment, name='bookappointemnt'),
     path('/dtpack/<int:id>', detail_packages, name='dtpack'),
-    path('/dtblog/<int:id>', detail_blogepage, name='dtblog')
+    path('/dtblog/<int:id>', detail_blogepage, name='dtblog'),
+    path('/detailbranches/<int:id>', branch_detailed, name='detailbranches')
 ]

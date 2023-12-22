@@ -6,9 +6,9 @@ from .models import *
 
 
 def index(request):
-   try:
-      status=False
-      if request.method == "POST":
+    try:
+        status = False
+        if request.method == "POST":
             name = request.POST['name']
             email = request.POST['email']
             phone = request.POST['phone']
@@ -22,14 +22,13 @@ def index(request):
                     request, 'Sent Succesfully.We Will Get Back To You Soon')
             else:
                 status = False
-                messages.info(request, 'Sorry Error Occured ! Please Try Again')
+                messages.info(
+                    request, 'Sorry Error Occured ! Please Try Again')
                 return redirect(index)
 
-
-      return render(request, 'index.html',{'status':status})
-   except Exception as e:
-       return render(request,'404.html')
-
+        return render(request, 'index.html', {'status': status})
+    except Exception as e:
+        return render(request, '404.html')
 
 
 def aboutus(request):
@@ -42,29 +41,37 @@ def testpage(request):
 
 def packages(request):
     try:
-        query=Packages.objects.all()
-        return render(request, 'packages.html',{"query":query})
+        query = Packages.objects.all()
+        return render(request, 'packages.html', {"query": query})
     except Exception as e:
-       return render(request,'404.html')
+        return render(request, '404.html')
 
 
 def blogs(request):
     try:
-     query=Blogs.objects.all()
-     return render(request, 'blogs.html',{"query":query})
+        query = Blogs.objects.all()
+        return render(request, 'blogs.html', {"query": query})
     except Exception as e:
-       
-       return render(request,'404.html')
 
+        return render(request, '404.html')
 
 
 def gallery(request):
+    try:
+        query = Gallery.objects.all().order_by('?')
+        return render(request, 'gallery.html', {"query": query})
+    except Exception as e:
 
-    return render(request, 'gallery.html')
+        return render(request, '404.html')
 
 
 def branches(request):
-    return render(request, 'branches.html')
+    try:
+        query=Branches.objects.all()
+        return render(request, 'branches.html',{"query":query})
+    except Exception as e:
+
+        return render(request, '404.html')
 
 
 def contact_us(request):
@@ -86,57 +93,68 @@ def contact_us(request):
                 return redirect(contact_us)
             else:
                 status = False
-                messages.info(request, 'Sorry Error Occured ! Please Try Again')
+                messages.info(
+                    request, 'Sorry Error Occured ! Please Try Again')
                 return redirect(contact_us)
 
         return render(request, 'contactus.html', {"status": status})
     except:
-       return render(request,'404.html')
+        return render(request, '404.html')
 
 
 def book_appontment(request):
     try:
-        status=False
-        if request.method=="POST":
+        status = False
+        if request.method == "POST":
             name = request.POST['name']
             email = request.POST['email']
             phone = request.POST['phone']
-            time=request.POST['time']
-            date=request.POST['date']
-            age=request.POST['age']
-            gender=request.POST['gender']
+            time = request.POST['time']
+            date = request.POST['date']
+            age = request.POST['age']
+            gender = request.POST['gender']
             address = request.POST['address']
             message = request.POST['message']
-            if name or email or phone or time or date or age or gender or address or message !="":
-                query=BookAppontment.objects.create(name=name,email=email,phone=phone,time=time,date=date,age=age,gender=gender,address=address,message=message)
+            if name or email or phone or time or date or age or gender or address or message != "":
+                query = BookAppontment.objects.create(
+                    name=name, email=email, phone=phone, time=time, date=date, age=age, gender=gender, address=address, message=message)
                 if query:
-                    status=True
-                    messages.success(request,"SUccessfull Booked.")
+                    status = True
+                    messages.success(request, "SUccessfull Booked.")
                 else:
-                    messages.error(request,'Sorry Error Occured Please Try Again')
+                    messages.error(
+                        request, 'Sorry Error Occured Please Try Again')
             else:
-                messages.error(request,"Sorry Null Values Are Not Allowed")
+                messages.error(request, "Sorry Null Values Are Not Allowed")
                 return redirect(book_appontment)
 
-        return render(request, 'bookappointment.html',{"status":status})
+        return render(request, 'bookappointment.html', {"status": status})
     except Exception as e:
-       return render(request,'404.html')
+        return render(request, '404.html')
 
 
-def detail_packages(request,id):
+def detail_packages(request, id):
     try:
-        query=Packages.objects.filter(id=id)
-        return render(request, 'detailedpackage.html',{"query":query})
+        query = Packages.objects.filter(id=id)
+        return render(request, 'detailedpackage.html', {"query": query})
     except Exception as e:
-       print(e)
-       return render(request,'404.html')
+        print(e)
+        return render(request, '404.html')
 
 
-def detail_blogepage(request,id):
+def detail_blogepage(request, id):
     try:
-        recent=Blogs.objects.all().order_by('-date')[:5]
-        query=Blogs.objects.filter(id=id)
-        return render(request, 'detailblogpage.html',{"query":query,"recent":recent})
+        recent = Blogs.objects.all().order_by('-date')[:5]
+        query = Blogs.objects.filter(id=id)
+        return render(request, 'detailblogpage.html', {"query": query, "recent": recent})
     except Exception as e:
-       return render(request,'404.html')
+        return render(request, '404.html')
 
+
+def branch_detailed(request,id):
+    try:
+        query=Branches.objects.filter(id=id)
+        return render(request, 'detailbranches.html',{"query":query})
+    except Exception as e:
+        
+        return render(request, '404.html')

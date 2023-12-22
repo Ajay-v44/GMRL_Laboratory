@@ -1,0 +1,81 @@
+{% extends 'index.html' %}
+{% load static %}
+{% block content2 %}
+{% for val in  query%}
+<div class="flex flex-col md:flex-row items-center justify-start bg-gradient-to-t from-blue-50 to-white">
+  <div
+    class="content pl-10 md:pl-10 md:w-[90rem] md:block flex flex-col justify-center items-center mx-10 mt-10 "
+  >
+    <h1 class="text-gray-800 text-4xl md:text-6xl carouselTitle">{{val.branch_name}}</h1>
+   
+  </div>
+  <div class="md:-mt-[13rem] w-auto h-auto md:w-full md:h-full md:ml-20">
+    <img
+      class="mySlides object-contain"
+      src="{% static 'images/branch.webp' %}"
+      style="width: 100%;"
+    />
+  </div>
+</div>
+<!--Hero2  starts-->
+<div class="mx-10 md:mx-20 flex flex-col md:flex-row p-5 gap-5 mt-10">
+    <div
+      class="card border-2 border-gray-300 border-b-blue-500 hover:border-b-green-500 p-5 flex flex-col justify-center items-center w-auto h-auto md:w-80 md:h-60"
+    >
+      <div
+        class="bg-blue-500 text-white rounded-full hover:bg-green-500 delay-150 w-20 h-20 flex justify-center items-center"
+      >
+        <i class="fa-solid fa-phone text-3xl"></i>
+      </div>
+      <h3 class="text-gray-900 text-lg font-medium">Phone</h3>
+      <a href="" class="text-gray-500">+91 {{val.phone}}</a>
+      <a href="" class="text-gray-500">0484 0000 0000</a>
+    </div>
+    <div
+      class="card border-2 border-gray-300 border-b-blue-500 hover:border-b-green-500 p-5 flex flex-col justify-center items-center w-auto h-auto md:w-80 md:h-60"
+    >
+      <div
+        class="bg-blue-500 text-white rounded-full hover:bg-green-500 delay-150 w-20 h-20 flex justify-center items-center"
+      >
+        <i class="fa-solid fa-envelope text-3xl"></i>
+      </div>
+      <h3 class="text-gray-900 text-lg font-medium">Email</h3>
+      <a href="" class="text-gray-500">{{val.email}}</a>
+    </div>
+    <div
+      class="card border-2 border-gray-300 border-b-blue-500 hover:border-b-green-500 p-5 flex flex-col justify-center items-center w-auto h-auto md:w-80 md:h-60"
+    >
+      <div
+        class="bg-blue-500 text-white rounded-full hover:bg-green-500 delay-150 w-20 h-20 flex justify-center items-center"
+      >
+        <i class="fa-solid fa-location-dot text-3xl"></i>
+      </div>
+      <h3 class="text-gray-900 text-lg font-medium">Address</h3>
+      <a href="" class="text-gray-500"
+        >{{val.address}}</a
+      >
+    </div>
+    <div
+      class="card border-2 border-gray-300 border-b-blue-500 hover:border-b-green-500 p-5 flex flex-col justify-center items-center w-auto h-auto md:w-80 md:h-60"
+    >
+      <div
+        class="bg-blue-500 text-white rounded-full hover:bg-green-500 delay-150 w-20 h-20 flex justify-center items-center"
+      >
+        <i class="fa-regular fa-clock text-3xl"></i>
+      </div>
+      <h3 class="text-gray-900 text-lg font-medium">Opening Hours</h3>
+      <a href="" class="text-gray-500">Mon - Sat : {{val.mon_sat}}</a>
+      <a href="" class="text-gray-500">Sun : {{val.sun}}</a>
+    </div>
+  </div>
+  
+  <!--Hero2 Ends-->
+  <!--Hero3 starts-->
+  <div class="mt-10 mx-10 md:mx-14 flex flex-col md:flex-row justify-center items-center gap-5 ">
+    <img src="{{val.image.url}}" alt="" class="w-96 h-96 md:w-1/2 ">
+    <iframe src="{{val.maplink}};" width="600" height="450" style="border:0;"  allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade" class= "w-96 md:w-1/2" ></iframe>
+
+  </div>
+<!--Hero3 Ends-->
+{% endfor %}
+{% endblock content2 %}
