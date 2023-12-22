@@ -81,3 +81,27 @@ class PackagesAdmin(admin.ModelAdmin):
     list_display=('package_name','image','price','includeds')
     search_fields=['package_name','price']
     list_filter=['package_name']
+
+class Blogs(models.Model):
+    title=models.CharField(max_length=150)
+    image=models.ImageField( upload_to='blogs')
+    date=models.DateField( auto_now=True)
+    desc=models.TextField()
+    sub1=models.CharField( max_length=150,blank=True)
+    desc1=models.TextField(blank=True)
+    sub2=models.CharField( max_length=150,blank=True)
+    desc2=models.TextField(blank=True)
+    sub3=models.CharField( max_length=150,blank=True)
+    desc3=models.TextField(blank=True)
+    sub4=models.CharField( max_length=150,blank=True)
+    desc4=models.TextField(blank=True)
+    sub5=models.CharField( max_length=150,blank=True)
+    desc5=models.TextField(blank=True)
+    sub6=models.CharField( max_length=150,blank=True)
+    desc6=models.TextField(blank=True)
+    class Meta:
+        db_table='Blogs'
+@admin.register(Blogs)
+class BlogsAdmin(admin.ModelAdmin):
+    list_display=('title','image','date','desc')
+    list_filter=['date']

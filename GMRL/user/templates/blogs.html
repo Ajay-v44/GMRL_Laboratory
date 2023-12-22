@@ -19,16 +19,16 @@ revolutionizing outcomes.
 </div>
 <!--Hero2  starts-->
 <div class="grid grid-cols-1 md:grid-cols-3 gap-10 place-content-center  mx-20 mt-10 ">
-
+{% for blog in query %}
   <!-- Card 1 -->
-  <div class="card w-96">
-     <a href="{% url "dtblog" %}">
+  <div class="card w-2/2">
+     <a href="{% url "dtblog" blog.id %}">
        <div class="img">
          <div class="relative overflow-hidden bg-cover bg-no-repeat">
            <img
-             src="https://www.demo.ooly.in/gmrl/wp-content/uploads/2023/11/molecular-biology.jpg"
+             src="{{blog.image.url}}"
              class="zoom-on-hover transition-transform duration-500 ease-in-out transform hover:scale-110 h-[288px] try"
-             alt="Executive Package" width="400rem"
+             alt="Executive Package" width="600rem"
            />
            <div
              class="absolute bottom-0 left-0 right-0 top-0 h-full w-full overflow-hidden bg-blue-800 bg-fixed opacity-0 transition duration-300 ease-in-out hover:opacity-70 flex justify-center items-center"
@@ -39,49 +39,19 @@ revolutionizing outcomes.
            </div>
          </div>
        </div>
-       <div class="content">
+       <div class="content  " >
          
          <div
            class="flex justify-between items-center bg-gray-400 hover:bg-green-600 p-3  text-black hover:text-white"
          >
-           <h5 class="font-medium">Unlocking the Power of Genes: Exploring the Impact of Molecular Biology on Personalized Medicine</h5>
+           <h5 class="font-medium">{{blog.title}}</h5>
           
          </div>
        </div>
      </a>
    </div>
    <!-- End Card 1 -->
-   <!-- Card 1 -->
-  <div class="card w-96">
-    <a href="">
-      <div class="img">
-        <div class="relative overflow-hidden bg-cover bg-no-repeat">
-          <img
-            src="https://www.demo.ooly.in/gmrl/wp-content/uploads/2023/11/radiology.jpg"
-            class="zoom-on-hover transition-transform duration-500 ease-in-out transform hover:scale-110 h-[288px]"
-            alt="Executive Package"
-          />
-          <div
-            class="absolute bottom-0 left-0 right-0 top-0 h-full w-full overflow-hidden bg-blue-800 bg-fixed opacity-0 transition duration-300 ease-in-out hover:opacity-70 flex justify-center items-center"
-          >
-            <b class="mx-10 text-2xl">
-              <i class="fa-solid fa-link"></i
-            ></b>
-          </div>
-        </div>
-      </div>
-      <div class="content " >
-        
-        <div
-          class="flex justify-between items-center bg-gray-400 hover:bg-green-600 p-6  text-black hover:text-white"
-        >
-          <h5 class="font-medium">Beyond Images: The Vital Role of Radiology in Modern Diagnostic Excellence</h5>
-         
-        </div>
-      </div>
-    </a>
-  </div>
-  <!-- End Card 1 -->
+   {% endfor %}
 </div>
 
 {% endblock content2 %}

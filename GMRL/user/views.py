@@ -41,12 +41,21 @@ def testpage(request):
 
 
 def packages(request):
-    query=Packages.objects.all()
-    return render(request, 'packages.html',{"query":query})
+    try:
+        query=Packages.objects.all()
+        return render(request, 'packages.html',{"query":query})
+    except Exception as e:
+       return render(request,'404.html')
 
 
 def blogs(request):
-    return render(request, 'blogs.html')
+    try:
+     query=Blogs.objects.all()
+     return render(request, 'blogs.html',{"query":query})
+    except Exception as e:
+       
+       return render(request,'404.html')
+
 
 
 def gallery(request):
@@ -86,35 +95,48 @@ def contact_us(request):
 
 
 def book_appontment(request):
-    status=False
-    if request.method=="POST":
-        name = request.POST['name']
-        email = request.POST['email']
-        phone = request.POST['phone']
-        time=request.POST['time']
-        date=request.POST['date']
-        age=request.POST['age']
-        gender=request.POST['gender']
-        address = request.POST['address']
-        message = request.POST['message']
-        if name or email or phone or time or date or age or gender or address or message !="":
-            query=BookAppontment.objects.create(name=name,email=email,phone=phone,time=time,date=date,age=age,gender=gender,address=address,message=message)
-            if query:
-                status=True
-                messages.success(request,"SUccessfull Booked.")
+    try:
+        status=False
+        if request.method=="POST":
+            name = request.POST['name']
+            email = request.POST['email']
+            phone = request.POST['phone']
+            time=request.POST['time']
+            date=request.POST['date']
+            age=request.POST['age']
+            gender=request.POST['gender']
+            address = request.POST['address']
+            message = request.POST['message']
+            if name or email or phone or time or date or age or gender or address or message !="":
+                query=BookAppontment.objects.create(name=name,email=email,phone=phone,time=time,date=date,age=age,gender=gender,address=address,message=message)
+                if query:
+                    status=True
+                    messages.success(request,"SUccessfull Booked.")
+                else:
+                    messages.error(request,'Sorry Error Occured Please Try Again')
             else:
-                messages.error(request,'Sorry Error Occured Please Try Again')
-        else:
-            messages.error(request,"Sorry Null Values Are Not Allowed")
-            return redirect(book_appontment)
+                messages.error(request,"Sorry Null Values Are Not Allowed")
+                return redirect(book_appontment)
 
-    return render(request, 'bookappointment.html',{"status":status})
+        return render(request, 'bookappointment.html',{"status":status})
+    except Exception as e:
+       return render(request,'404.html')
 
 
 def detail_packages(request,id):
-    query=Packages.objects.filter(id=id)
-    return render(request, 'detailedpackage.html',{"query":query})
+    try:
+        query=Packages.objects.filter(id=id)
+        return render(request, 'detailedpackage.html',{"query":query})
+    except Exception as e:
+       print(e)
+       return render(request,'404.html')
 
 
-def detail_blogepage(request):
-    return render(request, 'detailblogpage.html')
+def detail_blogepage(request,id):
+    try:
+        recent=Blogs.objects.all().order_by('-date')[:5]
+        query=Blogs.objects.filter(id=id)
+        return render(request, 'detailblogpage.html',{"query":query,"recent":recent})
+    except Exception as e:
+       return render(request,'404.html')
+
