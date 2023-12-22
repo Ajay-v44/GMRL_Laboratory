@@ -5,3 +5,14 @@ font-family: 'Oswald', sans-serif;
 font-weight: bold;
 
 }
+
+
+  /* Add this to your stylesheet */
+.zoom-on-hover {
+    transition: transform 0.3s ease-in-out;
+  }
+  
+  .zoom-on-hover.zoomed {
+    transform: scale(1.1);
+  }
+  

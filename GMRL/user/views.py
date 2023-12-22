@@ -34,5 +34,13 @@ def branches(request):
 
 def contact_us(request):
     return render(request, 'contactus.html')
+
+
 def book_appontment(request):
-    return render(request,'bookappointment.html')
+    return render(request, 'bookappointment.html')
+
+
+def detail_packages(request):
+    return render(request, 'detailedpackage.html')
+def detail_blogepage(request):
+    return render(request,'detailblogpage.html')

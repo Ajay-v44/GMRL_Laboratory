@@ -31,16 +31,21 @@ ALLOWED_HOSTS = []
 # Application definition
 
 INSTALLED_APPS = [
+    
     'django.contrib.admin',
+
     'django.contrib.auth',
     'django.contrib.contenttypes',
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+
     'user',
     'tailwind',
     'theme',
-    'django_browser_reload'
+    'django_browser_reload',
+    'jazzmin',
+
 ]
 TAILWIND_APP_NAME = 'theme'
 INTERNAL_IPS = [
