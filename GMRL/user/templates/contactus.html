@@ -81,34 +81,91 @@
     class="w-auto h-auto rounded-md"
   />
   <div class="form">
-    <h1 class="text-3xl text-gray-600 text-center md:text-start ">Send us a message</h1>
-    <p class="text-sm text-gray-500 pt-3  text-center md:text-start">Connect with us and share your thoughts – your message matters to us.</p>
-    <form action="" method="post" class=" flex flex-col gap-5 md:gap-10 mt-5 justify-center md:justify-start items-center md:items-start " >{% csrf_token %}
+    <h1 class="text-3xl text-gray-600 text-center md:text-start">
+      Send us a message
+    </h1>
+    <p class="text-sm text-gray-500 pt-3 text-center md:text-start">
+      Connect with us and share your thoughts – your message matters to us.
+    </p>
+    <form
+      action=""
+      method="post"
+      class="flex flex-col gap-5 md:gap-10 mt-5 justify-center md:justify-start items-center md:items-start"
+    >
+      {% csrf_token %}
 
-       <div class="flex gap-5 flex-col md:flex-row">
-        <input type="text" name="name" placeholder="Your Name" required="" class="w-80  border-2 border-gray-200 rounded-sm focus:border-blue-200" >
-        <input type="email" name="email" placeholder="Email" required="" class="w-80 border-2 border-gray-200 rounded-sm focus:border-blue-200" >
-       </div>
-       <div class="flex gap-5  flex-col md:flex-row">
-        <input type="number" name="phone" placeholder="Phone" required="" class="w-80 border-2 border-gray-200 rounded-sm focus:border-blue-200" minlength="10" maxlength="10" >
-        <input type="text" name="subject" placeholder="Subject" required="" class="w-80 border-2 border-gray-200 rounded-sm focus:border-blue-200" >
-       </div>
-       <textarea name="" id="" cols="65" rows="5" class="border-2 border-gray-200 rounded-sm focus:border-blue-200  w-80 md:w-auto" required name="message" placeholder="Message" ></textarea>
-       <button
-                type="submit"
-                class="bg-blue-800 text-white p-2 rounded-lg w-64 hover:bg-green-600 mt-5 mb-5"
-              >
-                Submit
-              </button>
-      </form>
+      <div class="flex gap-5 flex-col md:flex-row">
+        <input
+          type="text"
+          name="name"
+          placeholder="Your Name"
+          required=""
+          class="w-80 border-2 border-gray-200 rounded-sm focus:border-blue-200"
+        />
+        <input
+          type="email"
+          name="email"
+          placeholder="Email"
+          required=""
+          class="w-80 border-2 border-gray-200 rounded-sm focus:border-blue-200"
+        />
+      </div>
+      <div class="flex gap-5 flex-col md:flex-row">
+        <input
+          type="number"
+          name="phone"
+          placeholder="Phone"
+          required=""
+          class="w-80 border-2 border-gray-200 rounded-sm focus:border-blue-200"
+          minlength="10"
+          maxlength="10"
+        />
+        <input
+          type="text"
+          name="subject"
+          placeholder="Subject"
+          required=""
+          class="w-80 border-2 border-gray-200 rounded-sm focus:border-blue-200"
+        />
+      </div>
+      <textarea
+        name="message"
+        id=""
+        cols="65"
+        rows="5"
+        class="border-2 border-gray-200 rounded-sm focus:border-blue-200 w-80 md:w-auto"
+        required
+        name="message"
+        placeholder="Message"
+      ></textarea>
+      <button
+        type="submit"
+        class="bg-blue-800 text-white p-2 rounded-lg w-64 hover:bg-green-600 mt-5 mb-5"
+      >
+        Submit
+      </button>
+    </form>
+    {% if messages %} {% for message in messages %}
+    <div
+      class="{% if status %}bg-green-300 {% else%} bg-red-300 {% endif %} text-white rounded-xl alert font-medium text-center h-10 pt-2"
+    >
+      {{message}}
+    </div>
 
+    {% endfor %} {% endif %}
   </div>
 </div>
 
 <!--MAp-->
 <div class="flex justify-center items-center mt-20">
-    
-
-<iframe src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d7859.553450312518!2d76.323388!3d9.952526!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3b0873f5f90cc883%3A0x6b02b06cd62db722!2sGMRL%20Laboratories%20Chambakkara!5e0!3m2!1sen!2sin!4v1703169890189!5m2!1sen!2sin" width="1200" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade" ></iframe>
+  <iframe
+    src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d7859.553450312518!2d76.323388!3d9.952526!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3b0873f5f90cc883%3A0x6b02b06cd62db722!2sGMRL%20Laboratories%20Chambakkara!5e0!3m2!1sen!2sin!4v1703169890189!5m2!1sen!2sin"
+    width="1200"
+    height="450"
+    style="border: 0"
+    allowfullscreen=""
+    loading="lazy"
+    referrerpolicy="no-referrer-when-downgrade"
+  ></iframe>
 </div>
 {% endblock content2 %}

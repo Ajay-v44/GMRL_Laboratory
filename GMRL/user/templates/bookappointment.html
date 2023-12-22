@@ -21,14 +21,24 @@
 </div>
 <!--Hero2  starts-->
 <div class="flex justify-center items-center mt-20 flex-col">
-  
-    <h1 class="text-3xl text-gray-600 text-center md:text-start">
-      Book a Home Visit
-    </h1>
-    <p class="text-sm text-gray-500 pt-3  w-1/2 text-center ">
-      Experience personalized care with our expert team—schedule your appointment for comprehensive health assessments and proactive well-being.
-    </p>
-    <div class="form">
+ 
+
+  {% if messages %} {% for message in messages %}
+    <div
+      class="{% if status %}bg-green-300 {% else%} bg-red-300 {% endif %} text-white rounded-xl alert font-medium text-center h-10 pt-2"
+    >
+      {{message}}
+    </div>
+
+    {% endfor %} {% endif %}
+  <h1 class="text-3xl text-gray-600 text-center md:text-start">
+    Book a Home Visit
+  </h1>
+  <p class="text-sm text-gray-500 pt-3 w-1/2 text-center">
+    Experience personalized care with our expert team—schedule your appointment
+    for comprehensive health assessments and proactive well-being.
+  </p>
+  <div class="form">
     <form
       action=""
       method="post"

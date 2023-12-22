@@ -6,7 +6,7 @@ from django.contrib import admin
 class Contactus(models.Model):
     name = models.CharField(max_length=60)
     email = models.EmailField(max_length=254)
-    phone = models.IntegerField()
+    phone = models.BigIntegerField()
     subject = models.CharField(max_length=100)
     message = models.TextField()
     received_on = models.DateTimeField(auto_now=True)
@@ -24,3 +24,20 @@ class ContactusAdmin(admin.ModelAdmin):
                     'subject', 'message', 'received_on')
     search_fields = ['received_on', 'email']
     list_filter = ['received_on']
+class BookAppontment(models.Model):
+    name = models.CharField(max_length=60)
+    email = models.EmailField(max_length=254)
+    phone = models.BigIntegerField()
+    time=models.TimeField( auto_now_add=False)
+    date=models.DateField(auto_now_add=False)
+    age=models.IntegerField()
+    gender=models.CharField(max_length=20)
+    address = models.CharField(max_length=100)
+    message = models.TextField()
+    class Meta:
+        db_table='BookAppontment'
+@admin.register(BookAppontment)
+class BookAppontmentAdmin(admin.ModelAdmin):
+    list_display=('name','email','phone','time','date','age','gender','address','message')
+    search_fields=['date','name','email','phone']
+    list_filter=['date']
