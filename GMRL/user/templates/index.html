@@ -1015,13 +1015,13 @@
               />
               <input
                 type="number"
-                name="number"
+                name="phone"
                 placeholder="Phone"
                 required
                 class="w-64 border-2 border-gray-200 rounded-sm focus:border-blue-200"
               />
               <textarea
-                name=""
+               
                 id=""
                 cols="25"
                 rows=""
@@ -1037,6 +1037,15 @@
                 Submit
               </button>
             </form>
+          
+            {% if messages %} {% for message in messages %}
+            <div
+              class="{% if status %}bg-green-300 {% else%} bg-red-300 {% endif %} text-white rounded-xl alert font-medium text-center h-10 pt-2 p-5"
+            >
+              {{message}}
+            </div>
+        
+            {% endfor %} {% endif %}
           </div>
         </div>
       </div>

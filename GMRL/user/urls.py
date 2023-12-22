@@ -10,6 +10,6 @@ urlpatterns = [
     path('/branches', branches, name='branches'),
     path('/contactus', contact_us, name='contactus'),
     path('/bookappointemnt', book_appontment, name='bookappointemnt'),
-    path('/dtpack', detail_packages, name='dtpack'),
+    path('/dtpack/<int:id>', detail_packages, name='dtpack'),
     path('/dtblog', detail_blogepage, name='dtblog')
 ]
