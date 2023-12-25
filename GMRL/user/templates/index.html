@@ -26,10 +26,11 @@
       /></a>
 
       <div class="block md:hidden">
-        <a href="" class="text-4xl font-extrabold"
+        <button class="text-4xl font-extrabold" data-collapse-toggle="navbar-default" 
           ><i class="bi bi-list"></i
-        ></a>
+        ></button>
       </div>
+      
       <div
         class="hidden md:flex md:justify-between md:items-center md:gap-11 font-thin text-xs md:text-sm md:font-medium flex-wrap"
       >
@@ -79,7 +80,52 @@
     </div>
     <!-- hero Section-->
   </div>
-
+  <div class="hidden w-full md:w-auto absolute h-2/3 border-2 border-green-500 rounded-lg" id="navbar-default">
+    <ul class="font-medium flex flex-col justify-between items-center p-4 md:p-0  border  border-gray-100 rounded-lg bg-gray-50 md:flex-row md:space-x-8 rtl:space-x-reverse md:mt-0 md:border-0 md:bg-white dark:bg-gray-800 md:dark:bg-gray-900 dark:border-gray-700">
+      <li class="pb-5 border-b-2 border-b-blue-500 hover:border-b-green-500 w-full bg-green-400 rounded-lg"> <a
+        class="hover:bg-blue-800 hover:text-white text-slate-600 hover:p-1 hover:rounded-lg capitalize  flex justify-center items-center"
+        href="{% url "aboutus" %}"
+      >
+       about us
+      </a></li>
+      <li class="pb-5 border-b-2 border-b-blue-500 hover:border-b-green-500 w-full bg-green-400 rounded-lg"> <a
+        class="hover:bg-blue-800 hover:text-white text-slate-600 hover:p-1 hover:rounded-lg capitalize  flex justify-center items-center"
+        href="{% url "tests" %}"
+      >
+       tests
+      </a></li>
+      <li class="pb-5 border-b-2 border-b-blue-500 hover:border-b-green-500 w-full bg-green-400 rounded-lg"> <a
+        class="hover:bg-blue-800 hover:text-white text-slate-600 hover:p-1 hover:rounded-lg capitalize  flex justify-center items-center"
+        href="{% url "packages" %}"
+      >
+       packages
+      </a></li>
+      <li class="pb-5 border-b-2 border-b-blue-500 hover:border-b-green-500 w-full bg-green-400 rounded-lg"> <a
+        class="hover:bg-blue-800 hover:text-white text-slate-600 hover:p-1 hover:rounded-lg capitalize  flex justify-center items-center"
+        href="{% url "blogs" %}"
+      >
+        blogs
+      </a></li>
+      <li class="pb-5 border-b-2 border-b-blue-500 hover:border-b-green-500 w-full bg-green-400 rounded-lg"> <a
+        class="hover:bg-blue-800 hover:text-white text-slate-600 hover:p-1 hover:rounded-lg capitalize  flex justify-center items-center"
+        href="{% url "gallery" %}"
+      >
+        gallery
+      </a></li>
+      <li class="pb-5 border-b-2 border-b-blue-500 hover:border-b-green-500 w-full bg-green-400 rounded-lg"> <a
+        class="hover:bg-blue-800 hover:text-white text-slate-600 hover:p-1 hover:rounded-lg capitalize  flex justify-center items-center"
+        href="{% url "branches" %}"
+      >
+        branches
+      </a></li>
+      <li class="pb-5 border-b-2 border-b-blue-500 hover:border-b-green-500 w-full bg-green-400 rounded-lg"> <a
+        class="hover:bg-blue-800 hover:text-white text-slate-600 hover:p-1 hover:rounded-lg capitalize  flex justify-center items-center"
+        href="{% url "contactus" %}"
+      >
+        contact us
+      </a></li>
+    </ul>
+  </div>
   {% block content2 %}
   <div class="static md:absolute">
     <div class="flex flex-col md:flex-row items-center justify-start">
